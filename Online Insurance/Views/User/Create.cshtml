@@ -1,0 +1,89 @@
+﻿@model Online_Insurance.Models.CustomerDetail
+
+@{
+    ViewBag.Title = "SignUp";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create New User Details</h2>
+<br />
+
+
+@using (Html.BeginForm("Create", "User", FormMethod.Post))
+{
+ <div>
+        @Html.Partial("Default")
+    </div>
+    <table cellpadding="10">
+
+        <tr>
+            <td>@Html.Label("CustomerName")</td>
+            <td>
+                @Html.TextBoxFor(Model => Model.customerName)
+                @Html.ValidationMessageFor(Model => Model.customerName)
+            </td>
+        <tr>
+            <td>@Html.Label("Gender")</td>
+            <td>
+               @Html.RadioButtonFor(Model => Model.gender,"Male") Male
+                @Html.RadioButtonFor(Model => Model.gender,"Female")Female
+                @Html.ValidationMessageFor(Model => Model.gender)
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Age")</td>
+            <td>
+                @Html.TextBoxFor(Model => Model.age)
+                @Html.ValidationMessageFor(Model => Model.age)
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Address")</td>
+            <td>
+                @Html.TextBoxFor(Model => Model.Address)
+                @Html.ValidationMessageFor(Model => Model.Address)
+            </td>
+        </tr>
+
+    <tr>
+        <td>@Html.Label("PhoneNumber")</td>
+        <td>@Html.TextBoxFor(Model => Model.phoneNumber)</td>
+        <td>@Html.ValidationMessageFor(Model => Model.phoneNumber)</td>
+    </tr>
+    <tr>
+        <td>@Html.Label("DateOfBirth")</td>
+        <td>@Html.EditorFor(Model => Model.dateOfBirth)</td>
+        <td>@Html.ValidationMessageFor(Model => Model.dateOfBirth)</td>
+    </tr>
+    <tr>
+        <td>@Html.Label("MailId")</td>
+        <td>@Html.TextBoxFor(Model => Model.mailId)</td>
+        <td>@Html.ValidationMessageFor(Model => Model.mailId)</td>
+    </tr>
+    <tr>
+        <td>@Html.Label("Password")</td>
+        <td>@Html.TextBoxFor(Model => Model.password)</td>
+        <td>@Html.ValidationMessageFor(Model => Model.password)</td>
+    </tr>
+        <tr>
+            <td>@Html.Label("Conform Password")</td>
+            <td>@Html.TextBoxFor(Model => Model.conformPassword)</td>
+            <td>@Html.ValidationMessageFor(Model => Model.conformPassword)</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Annual Income")</td>
+            <td>@Html.TextBoxFor(Model => Model.annualIncome)</td>
+            <td>@Html.ValidationMessageFor(Model => Model.annualIncome)</td>
+        </tr>
+    <tr>
+        <td>
+            @Html.ActionLink("Back", "Index")
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.AntiForgeryToken()       <input type="submit" id="Submit" />
+        </td>
+    </tr>
+</table>
+}

@@ -1,0 +1,47 @@
+﻿@model Online_Insurance.Models.InsuranceDetails
+
+@{
+    ViewBag.Title = "AddDetails";
+    Layout = "~/Views/Shared/_Master.cshtml";
+}
+
+<h2>AddDetails</h2>
+
+@using (Html.BeginForm("AddDetails", "Admin", FormMethod.Post))
+{
+<table>
+    <tr style="border-spacing:10px">
+        <td>InsuranceId</td>
+        @*<td>
+            @Html.TextBoxFor(model => model.insuranceId  ,new { @MaxLength = 9 })
+            @Html.ValidationMessageFor(Model => Model.insuranceId)
+        </td>
+    </tr>*@
+    <tr>
+        <td>InsuranceNumber</td>
+        <td>
+            @Html.TextBoxFor(model => model.insuranceNumber, new { @MaxLength = 9 })
+            @Html.ValidationMessageFor(Model => Model.insuranceNumber)
+        </td>
+    </tr>
+    <tr>
+        <td>InsuranceType</td>
+        <td>
+            @Html.TextBoxFor(model => model.insuranceType)
+            @Html.ValidationMessageFor(Model => Model.insuranceType)
+        </td>
+    </tr>
+    <tr>
+        <td>GST</td>
+        <td>
+            @Html.TextBoxFor(model => model.GST)
+            @Html.ValidationMessageFor(Model => Model.GST)
+        </td>
+    </tr>
+  <tr>
+        <td>
+      @Html.AntiForgeryToken()  <input type="submit" value="Submit" />
+        </td>
+    </tr>
+</table>
+}

@@ -1,0 +1,62 @@
+﻿@model Online_Insurance.Entity.User
+@{
+    ViewBag.Title = "Edit";
+}
+<h2>Edit Existing Details</h2>
+<br />
+@using (Html.BeginForm("Update", "User", FormMethod.Post))
+{
+    @Html.HiddenFor(Model => Model.customerId)
+    <table cellpadding="10">
+        <tr>
+             <td> @Html.LabelFor(Model => Model.customerName)
+             @Html.EditorFor(Model => Model.customerName)  </td>
+        
+        </tr>
+       <tr>
+          <td>
+                @Html.LabelFor(Model => Model.age)
+                @Html.EditorFor(Model => Model.age)
+            </td>
+        </tr>
+        <tr>
+           
+            <td>
+                @Html.LabelFor(Model => Model.Address)
+                @Html.EditorFor(Model => Model.Address)
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(Model => Model.phoneNumber) </td>
+            <td>@Html.EditorFor(Model => Model.phoneNumber)</td>
+
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(Model => Model.dateOfBirth) </td>
+            <td>@Html.EditorFor(Model => Model.dateOfBirth)</td>
+    
+        </tr>
+
+        <tr>
+            <td>@Html.LabelFor(Model => Model.mailId) </td>
+            <td>@Html.EditorFor(Model => Model.mailId)</td>
+
+        </tr>
+
+        <tr>
+            <td>@Html.LabelFor(Model => Model.password) </td>
+            <td>@Html.EditorFor(Model => Model.password)</td>
+          
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(Model => Model.annualIncome) </td>
+            <td>@Html.EditorFor(Model => Model.annualIncome)</td>
+              </tr>
+
+        <tr>
+            <td>@Html.ActionLink("Back", "Index")   </td>
+            @Html.AntiForgeryToken()       <td><input type="Submit" id="Submit" />  </td>
+        </tr>
+ </table>
+}
+

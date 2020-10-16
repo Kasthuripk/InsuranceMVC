@@ -1,0 +1,57 @@
+﻿@model Online_Insurance.Entity.Admin
+
+@{
+    ViewBag.Title = "EditDetails";
+    Layout = "~/Views/Shared/_Master.cshtml";
+}
+
+<h2>EditDetails</h2>
+
+@using (Html.BeginForm("EditDetails", "Admin", FormMethod.Post))
+{
+    @Html.HiddenFor(Model => Model.insuranceId)
+    <table cellpadding="10">
+
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.insuranceNumber)
+            </td>
+            <td>
+                @Html.EditorFor(Model => Model.insuranceNumber)
+            </td>
+            @*<td>
+                    @Html.ValidationMessageFor(Model => Model.policyName)
+                </td>*@
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.insuranceType)
+            </td>
+            <td>
+                @Html.EditorFor(Model => Model.insuranceType)
+            </td>
+            @*<td>
+                    @Html.ValidationMessageFor(Model => Model.insuranceType))
+                </td>*@
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(Model => Model.GST)
+            </td>
+            <td>
+                @Html.EditorFor(Model => Model.GST)
+            </td>
+            @*@*@*@*<td>
+                    @Html.ValidationMessageFor(Model => Model.permiumAmount))
+                </td>**@@*@*@
+            </tr>
+            <tr>
+                <td>
+                    @Html.ActionLink("Back", "DisplayDetails")
+                </td>
+                <td>
+                    @Html.AntiForgeryToken()      <input type="Submit" id="Submit" />
+                </td>
+            </tr>
+        </table>
+}

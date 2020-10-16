@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/StyleSheet.css" />
+</head>
+<body>
+    
+    <div class="topnav">
+        <img src="~/Images/download (1).jpg" style="float:left;height:60px;width:110px"/>
+        @Html.ActionLink("SignUp", "Create", "User")
+        @Html.ActionLink("SignIn", "SignIn", "User")
+        @Html.ActionLink("Insurance","Index","Admin")
+        @*@Html.ActionLink("DisplayDetails", "DisplayDetails", "Admin")*@
+    </div>
+    <div class="row">
+        <div class="column_side">
+            <h3>Caringly yours</h3>
+            <p>
+                We help you get back on your feet<br />
+                and we do it quickly with our Clainm by Direct click
+            </p></div>
+        <div class="column_middle">
+            <img src="~/Images/Home.png"style="height:100vh"/>
+        </div>
+       </div>
+
+
+            @RenderBody()
+
+        
+</body>
+</html>

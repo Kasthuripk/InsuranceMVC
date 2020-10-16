@@ -1,0 +1,36 @@
+﻿@model Online_Insurance.Models.SignInDetails
+
+@{
+    ViewBag.Title = "SignIn";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>SignIn</h2>
+
+@using (Html.BeginForm("SignIn", "User", FormMethod.Post))
+{
+    <div>
+    @Html.Partial("Default")
+    </div>
+
+ <table cellpadding="10">
+        <tr>
+            <td>@Html.Label("UserID")</td>
+            <td>@Html.TextBoxFor(Model => Model.phoneNumber,new{ @maxLength=10,placeholder="Enter the phoneNumber"})
+            @Html.ValidationMessageFor(Model => Model.phoneNumber) </td>
+           </tr>
+     <tr>
+    <td>@Html.Label("Password")</td>
+         <td>@Html.TextBoxFor(Model => Model.password)
+             @Html.ValidationMessageFor(Model => Model.password)
+         </td>
+   </tr>
+   
+  
+<tr>
+         <td>
+             @Html.AntiForgeryToken()         <input type="submit" id="Submit" />
+         </td>
+   
+     </tr>
+</table>
+}

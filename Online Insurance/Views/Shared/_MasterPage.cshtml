@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/StyleSheet.css" />
+</head>
+<body>
+    <div class="topnav">
+        <img src="~/Images/download (1).jpg" style="float:left;height:60px;width:110px" />
+        @Html.ActionLink("SignUp", "Create", "User")
+        @Html.ActionLink("SignIn", "SignIn", "User")
+        @*@Html.ActionLink("DisplayDetails", "DisplayDetails", "Admin")*@
+    </div>
+
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

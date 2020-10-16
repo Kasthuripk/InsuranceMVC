@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Online_Insurance.Entity.Admin>
+
+@{
+    ViewBag.Title = "DisplayDetails";
+    Layout = "~/Views/Shared/_Master.cshtml";
+}
+
+<h2>DisplayDetails</h2>
+<table border="1">
+    <tr>
+        <td>InsuranceId</td>
+        <td>InsuranceNumber</td>
+        <td>InsuranceType</td>
+        <td>PermiumAmount</td>
+        <td>Changes</td>
+
+    </tr>
+    @foreach (Online_Insurance.Entity.Admin items in (IEnumerable<Online_Insurance.Entity.Admin>)ViewData["admin"])
+    {
+        <tr>
+            <td>@items.insuranceId</td>
+            <td>@items.insuranceNumber</td>
+            <td>@items.insuranceType</td>
+            <td>@items.GST</td>
+           
+        <td>
+            @Html.ActionLink("Edit", "EditDetails", new { insuranceId = items.insuranceId })|
+            @Html.ActionLink("Delete", "DeleteDetails", new { insuranceId = items.insuranceId })
+        </td>
+            
+            </tr>
+        }
+</table>
